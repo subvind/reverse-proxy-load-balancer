@@ -1,0 +1,131 @@
+c[[90m10:23:26 PM[0m] Starting compilation in watch mode...
+
+[96msrc/proxy/proxy.controller.ts[0m:[93m9[0m:[93m3[0m - [91merror[0m[90m TS1241: [0mUnable to resolve signature of method decorator when called as an expression.
+  The runtime will invoke the decorator with 2 arguments, but the decorator expects 3.
+
+[7m9[0m   @All('*')
+[7m [0m [91m  ~~~~~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.decorators.legacy.d.ts[0m:[93m21[0m:[93m82[0m
+    [7m21[0m declare type MethodDecorator = <T>(target: Object, propertyKey: string | symbol, descriptor: TypedPropertyDescriptor<T>) => TypedPropertyDescriptor<T> | void;
+    [7m  [0m [96m                                                                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    An argument for 'descriptor' was not provided.
+
+[96msrc/proxy/proxy.controller.ts[0m:[93m9[0m:[93m4[0m - [91merror[0m[90m TS1270: [0mDecorator function return type 'void | TypedPropertyDescriptor<unknown>' is not assignable to type 'void | ((req: Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>, res: Response<any, Record<string, any>>, next: NextFunction) => Promise<...>)'.
+  Type 'TypedPropertyDescriptor<unknown>' is not assignable to type 'void | ((req: Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>, res: Response<any, Record<string, any>>, next: NextFunction) => Promise<...>)'.
+
+[7m9[0m   @All('*')
+[7m [0m [91m   ~~~~~~~~[0m
+
+[96msrc/proxy/proxy.controller.ts[0m:[93m10[0m:[93m21[0m - [91merror[0m[90m TS1206: [0mDecorators are not valid here.
+
+[7m10[0m   async handleProxy(@Req() req: Request, @Res() res: Response, @Next() next: NextFunction) {
+[7m  [0m [91m                    ~[0m
+
+[96msrc/proxy/proxy.controller.ts[0m:[93m10[0m:[93m42[0m - [91merror[0m[90m TS1206: [0mDecorators are not valid here.
+
+[7m10[0m   async handleProxy(@Req() req: Request, @Res() res: Response, @Next() next: NextFunction) {
+[7m  [0m [91m                                         ~[0m
+
+[96msrc/proxy/proxy.controller.ts[0m:[93m10[0m:[93m64[0m - [91merror[0m[90m TS1206: [0mDecorators are not valid here.
+
+[7m10[0m   async handleProxy(@Req() req: Request, @Res() res: Response, @Next() next: NextFunction) {
+[7m  [0m [91m                                                               ~[0m
+
+[[90m10:23:26 PM[0m] Found 5 errors. Watching for file changes.
+
+c[[90m10:27:22 PM[0m] File change detected. Starting incremental compilation...
+
+[[90m10:27:22 PM[0m] Found 0 errors. Watching for file changes.
+
+[31m[Nest] 276986  - [39m09/07/2024, 10:27:23 PM [31m  ERROR[39m [38;5;3m[PackageLoader] [39m[31mNo driver (HTTP) has been selected. In order to take advantage of the default driver, please, ensure to install the "@nestjs/platform-express" package ($ npm install @nestjs/platform-express).[39m
+c[[90m10:28:49 PM[0m] File change detected. Starting incremental compilation...
+
+[[90m10:28:49 PM[0m] Found 0 errors. Watching for file changes.
+
+[32m[Nest] 277946  - [39m09/07/2024, 10:28:49 PM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 277946  - [39m09/07/2024, 10:28:49 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +8ms[39m
+[32m[Nest] 277946  - [39m09/07/2024, 10:28:49 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mProxyModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 277946  - [39m09/07/2024, 10:28:49 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mProxyController {/}:[39m[38;5;3m +2ms[39m
+[32m[Nest] 277946  - [39m09/07/2024, 10:28:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/*, ALL} route[39m[38;5;3m +1ms[39m
+Loaded services: [
+  { ip: '192.168.49.2', host: 'istrav.com', port: 31538 },
+  { ip: '192.168.49.2', host: 'subvind.com', port: 31538 },
+  { ip: '192.168.49.2', host: 'flow.istrav.com', port: 30470 },
+  { ip: '192.168.49.2', host: 'flow.subvind.com', port: 30470 }
+]
+traffic http://istrav.com -> http://192.168.49.2:31538
+traffic http://subvind.com -> http://192.168.49.2:31538
+traffic http://flow.istrav.com -> http://192.168.49.2:30470
+traffic http://flow.subvind.com -> http://192.168.49.2:30470
+[32m[Nest] 277946  - [39m09/07/2024, 10:28:49 PM [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +3ms[39m
+Reverse proxy running at http://localhost:8080
+Unhandled request: GET /
+Unhandled request: GET /favicon.ico
+Routing request to subvind.com
+Proxying request to subvind.com: GET /
+Received response from subvind.com: 200
+Routing request to flow.subvind.com
+Proxying request to flow.subvind.com: GET /
+Received response from flow.subvind.com: 200
+Routing request to flow.subvind.com
+Proxying request to flow.subvind.com: GET /socket.io/?EIO=4&transport=polling&t=P7FhVyw
+Received response from flow.subvind.com: 200
+Routing request to flow.subvind.com
+Proxying request to flow.subvind.com: POST /socket.io/?EIO=4&transport=polling&t=P7FhVzY&sid=Vg2LOO781jeWeDVlAAAq
+Received response from flow.subvind.com: 200
+Routing request to flow.subvind.com
+Proxying request to flow.subvind.com: GET /socket.io/?EIO=4&transport=polling&t=P7FhVzY.0&sid=Vg2LOO781jeWeDVlAAAq
+Received response from flow.subvind.com: 200
+Routing request to flow.subvind.com
+Proxying request to flow.subvind.com: GET /socket.io/?EIO=4&transport=websocket&sid=Vg2LOO781jeWeDVlAAAq
+Routing request to flow.subvind.com
+Proxying request to flow.subvind.com: GET /socket.io/?EIO=4&transport=polling&t=P7FhV-E&sid=Vg2LOO781jeWeDVlAAAq
+Received response from flow.subvind.com: 200
+Routing request to flow.subvind.com
+Proxying request to flow.subvind.com: POST /socket.io/?EIO=4&transport=polling&t=P7Fhc4G&sid=Vg2LOO781jeWeDVlAAAq
+Routing request to flow.subvind.com
+Proxying request to flow.subvind.com: GET /socket.io/?EIO=4&transport=polling&t=P7Fhc4H&sid=Vg2LOO781jeWeDVlAAAq
+Received response from flow.subvind.com: 200
+c[[90m10:29:58 PM[0m] File change detected. Starting incremental compilation...
+
+[91merror[0m[90m TS6053: [0mFile '/home/travis/Projects/reverse-proxy-load-balancer/src/proxy-server.ts' not found.
+  The file is in the program because:
+    Matched by default include pattern '**/*'
+
+[[90m10:29:58 PM[0m] Found 1 error. Watching for file changes.
+
+c[[90m10:29:59 PM[0m] File change detected. Starting incremental compilation...
+
+[[90m10:29:59 PM[0m] Found 0 errors. Watching for file changes.
+
+[32m[Nest] 278761  - [39m09/07/2024, 10:29:59 PM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 278761  - [39m09/07/2024, 10:29:59 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +6ms[39m
+[32m[Nest] 278761  - [39m09/07/2024, 10:29:59 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mProxyModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 278761  - [39m09/07/2024, 10:29:59 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mProxyController {/}:[39m[38;5;3m +3ms[39m
+[32m[Nest] 278761  - [39m09/07/2024, 10:29:59 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/*, ALL} route[39m[38;5;3m +1ms[39m
+Loaded services: [
+  { ip: '192.168.49.2', host: 'istrav.com', port: 31538 },
+  { ip: '192.168.49.2', host: 'subvind.com', port: 31538 },
+  { ip: '192.168.49.2', host: 'flow.istrav.com', port: 30470 },
+  { ip: '192.168.49.2', host: 'flow.subvind.com', port: 30470 }
+]
+traffic http://istrav.com -> http://192.168.49.2:31538
+traffic http://subvind.com -> http://192.168.49.2:31538
+traffic http://flow.istrav.com -> http://192.168.49.2:30470
+traffic http://flow.subvind.com -> http://192.168.49.2:30470
+[32m[Nest] 278761  - [39m09/07/2024, 10:29:59 PM [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +4ms[39m
+Reverse proxy running at http://localhost:8080
+Routing request to flow.subvind.com
+Proxying request to flow.subvind.com: GET /socket.io/?EIO=4&transport=polling&t=P7FhcjX
+Received response from flow.subvind.com: 200
+Routing request to flow.subvind.com
+Proxying request to flow.subvind.com: GET /socket.io/?EIO=4&transport=polling&t=P7FhckP&sid=L-WPGplQF4foZ2BMAAAs
+Routing request to flow.subvind.com
+Proxying request to flow.subvind.com: POST /socket.io/?EIO=4&transport=polling&t=P7FhckO&sid=L-WPGplQF4foZ2BMAAAs
+Received response from flow.subvind.com: 200
+Received response from flow.subvind.com: 200
+Routing request to flow.subvind.com
+Proxying request to flow.subvind.com: GET /socket.io/?EIO=4&transport=websocket&sid=L-WPGplQF4foZ2BMAAAs
+Routing request to flow.subvind.com
+Proxying request to flow.subvind.com: GET /socket.io/?EIO=4&transport=polling&t=P7Fhcl6&sid=L-WPGplQF4foZ2BMAAAs
